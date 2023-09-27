@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation Basics',
-    home: MyApp(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -70,28 +67,39 @@ class FirstRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Welcome to Flutter'),
+      ),
+      floatingActionButton: Padding(
+        padding: EdgeInsets.all(24.0),
+        child: SizedBox(
+          width: 120, // Ocupa toda a largura
+          child: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SecondRoute()),
+              );
+            },
+            child: Text('Change page'),
+          ),
         ),
-        body: Center(
-            child: Column(
-          children: [
-            ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                final item = items[index];
-                return ListTile(
-                  title: item.buildTitle(context),
-                  subtitle: item.buildSubtitle(context),
-                );
-              },
-            ),
-          ],
-        )),
-      );
-    });
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      body: Center(
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return ListTile(
+              title: item.buildTitle(context),
+              subtitle: item.buildSubtitle(context),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
