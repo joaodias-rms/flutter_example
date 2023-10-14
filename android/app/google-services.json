@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1004286842383",
+    "project_id": "flutter-tcc-example",
+    "storage_bucket": "flutter-tcc-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004286842383:android:3292d5491e2a6c50c0757a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tcc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbT7TgaCgH4lk7XGatSQQfKVLj3HmGSqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
